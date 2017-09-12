@@ -1,28 +1,23 @@
 import junit.framework.TestCase;
 
-/**
- * A JUnit test case class.
- * Every method starting with the word "test" will be called when running
- * the test with JUnit.
- */
 public class BookTest extends TestCase {
- 
-  public void testSameAuthorSame() {
-    Author hawking = new Author("Stephen Hawking", "M");
-    Author rowling = new Author("J.K. Rowling", "F");
+  
+  public void testSameAuth() {
+    Author green = new Author("John Green","M");
+    Author rowling = new Author("J.K. Rowling","F");
     
-    Book time = new Book(hawking, "A Brief History of Time", 1988);
-    Book stone = new Book(rowling, "The Philosophers's Stone",  1997);
+    Book tfios = new Book(green,"The Fault in our Stars",1998);
+    Book chamber = new Book(rowling,"Chamber of Secrets",1988);
     
-    assertEquals(false, time.sameAuthor(stone));
+    assertEquals(false,tfios.sameAuth(chamber));
   }
   
-  public void testSameAuthorNotSame() {
-    Author rowling = new Author("J.K. Rowling", "F");
-    
-    Book stone = new Book(rowling, "The Philosophers's Stone", 1997);
-    Book secrets = new Book(rowling, "The Chamber of Secrets", 1998);
-    
-    assertEquals(true, secrets.sameAuthor(stone));
+  public void testNotSame() {
+     Author rowling = new Author("J.K. Rowling","F");
+     
+      Book chamber = new Book(rowling,"Chamber of Secrets",1988);
+      Book stone = new Book(rowling,"Sorcerer's Stone",1988);
+      
+       assertEquals(true,chamber.sameAuth(stone));
   }
 }

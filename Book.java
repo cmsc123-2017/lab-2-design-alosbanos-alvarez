@@ -1,44 +1,37 @@
 class Book {
   Author author;
   String title;
-  int year;  // published
+  int yearPublish;
   
-  Book(Author author, String title, int year) {
+  Book(Author author, String title, int yearPublish){
     this.author = author;
     this.title = title;
-    this.year = year;
+    this.yearPublish = yearPublish;
   }
   
-  // TEMPLATE
-  /*   Fields:
-   *     this.author   -- Author
-   *     this.title    -- String
+  //TEMPLATE
+  /*
+   * FIELDS:
+   * this.author -- Author
+   * this.title -- String
    * 
-   *   Methods:
-   * 
-   *   Methods of author:
-   *     this.author.equals()  -- boolean
-   */
+   * Methods:
+   * this.author.equals() -- boolean
+   * */
   
-  // Book -> boolean
-  // Returns true if this Book has the same author
-  // as another book
-  boolean sameAuthor(Book that) {    
-    return this.author.equals(that.author);
-    
-    // TEMPLATE
-    /*    this.author
-     *    this.title
-     * 
-     *    that
-     *    that.author
-     *    that.title
-     */
+  //-> boolean
+  // Returns if this book has the same author
+  
+  boolean bookPublished(Book b) {
+    if(this.yearPublish > b.yearPublish) {
+      return true;
+    }else
+      return false; 
   }
- 
   
-  // TODO design a function publishedBefore that accepts a Book and
-  //   returns true if this Book was published before the other 
+  boolean sameAuth(Book b) {
+    return this.author.equals(b.author);
+  }
   
   
 }
