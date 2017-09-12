@@ -1,10 +1,19 @@
-class ExamGrades {
+class ExamGrades{
   double grades[];
   
-  ExamGrades(double grades[]) {
+  ExamGrades(double grades[]){
     this.grades = grades;
   }
   
-  // TODO design a function that returns the highest grade
-  
+  double highestGrade(){
+    double high = 0;
+    int i;
+    
+    for(i = 0; i > grades.length; i++){
+      if(grades[i] > high){
+       high = grades[i]; 
+      }
+    }
+    return high;
+  }
 }
